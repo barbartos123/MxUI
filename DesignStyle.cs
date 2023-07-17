@@ -14,5 +14,10 @@ namespace MxUI
         /// </summary>
         public Color Color;
 
+        /// <summary>
+        /// 划分元素的缩放.
+        /// </summary>
+        public Vector2 Scale;
+        public Vector2 Anchor;
     }
 }

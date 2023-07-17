@@ -16,11 +16,15 @@ namespace MxUI
 
         public static Texture2D Button;
 
+        public static Texture2D ScaleTest;
+
         public static MouseState MouseState = new MouseState( );
 
         public static MouseState MouseStateLast = new MouseState( );
 
         public static Container Container = new Container( );
+
+        public static GameTime GameTime;
 
         public Main( )
         {
@@ -42,19 +46,22 @@ namespace MxUI
             SpriteBatch = new SpriteBatch( GraphicsDevice );
             Pixel = Content.Load<Texture2D>( "Pixel" );
             Button = Content.Load<Texture2D>( "Button" );
+            ScaleTest = Content.Load<Texture2D>( "ScaleTest" );
+
             Container.DoInitialize( );
         }
         protected override void Update( GameTime gameTime )
         {
             MouseStateLast = MouseState;
             MouseState = Mouse.GetState( );
+            GameTime = gameTime;
             Container.DoUpdate( );
             base.Update( gameTime );
         }
         protected override void Draw( GameTime gameTime )
         {
             GraphicsDevice.Clear( Color.Black );
-            SpriteBatch.Begin( SpriteSortMode.Deferred, BlendState.AlphaBlend , SamplerState.PointClamp );
+            SpriteBatch.Begin( SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp );
             Container.DoRender( SpriteBatch );
             SpriteBatch.End( );
             base.Draw( gameTime );

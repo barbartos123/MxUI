@@ -6,8 +6,10 @@
   <SourceFiles>
     <File>E:/Codes/Courses/MxUI/Content/Button.png</File>
     <File>E:/Codes/Courses/MxUI/Content/Pixel.png</File>
+    <File>E:/Codes/Courses/MxUI/Content/ScaleTest.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>

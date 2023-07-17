@@ -3,6 +3,7 @@ using MxUI.Renderers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,8 @@ namespace MxUI
         public Division Button;
 
         public Division List;
+
+        public Division ScaleTest;
 
         public override void OnInit( )
         {
@@ -52,6 +55,21 @@ namespace MxUI
             }
             Register( List );
 
+            ScaleTest = new Division( );
+            ScaleTest.BindRenderer<TextureRenderer>( );
+            (ScaleTest.Renderer as TextureRenderer).Texture = Main.ScaleTest;
+
+            ScaleTest.Controller = new ScaleController( );
+            ScaleController controller = ScaleTest.Controller as ScaleController;
+            ScaleTest.Layout.Width = 64;
+            ScaleTest.Layout.Height = 64;
+            ScaleTest.Layout.Left = List.Layout.Left + 128;
+            ScaleTest.Layout.Top = 64;
+            ScaleTest.Design.Anchor = Vector2.One * 32;
+            ScaleTest.Design.Scale = Vector2.One;
+           ScaleTest.Events.InteractionStart += ( ) => { controller.Close = true; };
+            ScaleTest.Events.InteractionEnd += ( ) => { controller.Open = true; };
+            Register( ScaleTest );
             base.OnInit( );
         }
         public override void OnUpdate( )

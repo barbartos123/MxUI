@@ -15,7 +15,7 @@ namespace MxUI.Renderers
         public override void Render( SpriteBatch batch )
         {
             if( Texture != null )
-                batch.Draw( Texture, Division.Layout.LocationF, null, Division.Design.Color, 0f, Vector2.Zero, 1f, SpriteEffects.None, 1f );
+                batch.Draw( Texture, Division.Layout.LocationF + Division.Design.Anchor, null, Division.Design.Color, 0f, Division.Design.Anchor, Division.Design.Scale, SpriteEffects.None, 1f );
         }
     }
 }

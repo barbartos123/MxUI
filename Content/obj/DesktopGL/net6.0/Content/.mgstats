@@ -1,3 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "E:/Codes/Courses/MxUI/Content/Button.png","E:/Codes/Courses/MxUI/Content/bin/DesktopGL/Content/Button.xnb","TextureProcessor","Texture2DContent",177,661,0.108494
 "E:/Codes/Courses/MxUI/Content/Pixel.png","E:/Codes/Courses/MxUI/Content/bin/DesktopGL/Content/Pixel.xnb","TextureProcessor","Texture2DContent",119,89,0.0017704
+"E:/Codes/Courses/MxUI/Content/ScaleTest.png","E:/Codes/Courses/MxUI/Content/bin/DesktopGL/Content/ScaleTest.xnb","TextureProcessor","Texture2DContent",192,16469,0.1092212

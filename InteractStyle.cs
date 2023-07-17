@@ -17,5 +17,10 @@ namespace MxUI
         /// 表示当前的交互状态.
         /// </summary>
         public bool Interaction;
+
+        /// <summary>
+        /// 表示上一帧的交互状态.
+        /// </summary>
+        public bool InteractionLast;
     }
 }

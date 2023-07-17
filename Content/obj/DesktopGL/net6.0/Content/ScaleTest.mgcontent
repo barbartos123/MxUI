@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>E:/Codes/Courses/MxUI/Content/Button.png</SourceFile>
-  <SourceTime>2023-07-17T09:07:58.0147385+08:00</SourceTime>
-  <DestFile>E:/Codes/Courses/MxUI/Content/bin/DesktopGL/Button.xnb</DestFile>
-  <DestTime>2023-07-17T09:53:08.0372689+08:00</DestTime>
+  <SourceFile>E:/Codes/Courses/MxUI/Content/ScaleTest.png</SourceFile>
+  <SourceTime>2023-07-17T09:52:58.3128814+08:00</SourceTime>
+  <DestFile>E:/Codes/Courses/MxUI/Content/bin/DesktopGL/Content/ScaleTest.xnb</DestFile>
+  <DestTime>2023-07-17T09:54:28.447768+08:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T19:44:56+08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

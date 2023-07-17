@@ -67,6 +67,7 @@ namespace MxUI
         public Division( )
         {
             Events = new DivisionEvents( );
+            Events.Division = this;
             Design.Color = Color.White;
             Interact.IsInteractive = true;
         }
@@ -83,10 +84,12 @@ namespace MxUI
         public virtual void OnInit( ) { }
         public void DoUpdate( )
         {
+            Interact.InteractionLast = Interact.Interaction;
             if( ContainsPoint( Main.MouseState.Position ) )
                 Interact.Interaction = true;
             else
                 Interact.Interaction = false;
+            Events.IndentExecut( );
             Controller?.Layout( ref Layout );
             if( Parent != null )
                 Layout.Calculate( Parent.Layout );

@@ -25,3 +25,4 @@ E:\Codes\Courses\MxUI\obj\Debug\net6.0\refint\MxUI.dll
 E:\Codes\Courses\MxUI\obj\Debug\net6.0\MxUI.pdb
 E:\Codes\Courses\MxUI\obj\Debug\net6.0\MxUI.genruntimeconfig.cache
 E:\Codes\Courses\MxUI\obj\Debug\net6.0\ref\MxUI.dll
+E:\Codes\Courses\MxUI\bin\Debug\net6.0\Content\ScaleTest.xnb

@@ -9,6 +9,8 @@ namespace MxUI
 {
     public class DivisionEvents
     {
+        public Division Division;
+
         public event Action OnMouseLeftClickBefore;
 
         public event Action OnMouseLeftClickAfter;
@@ -16,6 +18,10 @@ namespace MxUI
         public event Action OnMouseLeftDown;
 
         public event Action OnMouseLeftUp;
+
+        public event Action InteractionStart;
+
+        public event Action InteractionEnd;
 
         private MouseState _state;
 
@@ -34,6 +40,14 @@ namespace MxUI
                 OnMouseLeftClickAfter?.Invoke( );
             else
                 OnMouseLeftUp?.Invoke( );
+        }
+
+        public void IndentExecut( )
+        {
+            if( Division.Interact.Interaction && !Division.Interact.InteractionLast )
+                InteractionStart?.Invoke( );
+            else if( !Division.Interact.Interaction && Division.Interact.InteractionLast )
+                InteractionEnd?.Invoke( );
         }
     }
 }

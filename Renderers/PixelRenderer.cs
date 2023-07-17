@@ -13,7 +13,7 @@ namespace MxUI.Renderers
         public override void RendererInit( ) { }
         public override void Render( SpriteBatch batch )
         {
-            batch.Draw( Main.Pixel, Division.Layout.TotalHitBox, null, Division.Design.Color, 0f, Vector2.Zero, SpriteEffects.None, 1f );
+            batch.Draw( Main.Pixel, Division.Layout.TotalHitBox, null , Division.Design.Color, 0f, Division.Design.Anchor, SpriteEffects.None, 1f );
         }
     }
 }
