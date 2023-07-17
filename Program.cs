@@ -1,5 +1,5 @@
 ﻿
 using System;
 
-using var game = new MxUI.Game1( );
+using var game = new MxUI.Main( );
 game.Run( );

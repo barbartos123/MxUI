@@ -18,6 +18,9 @@ namespace MxUI
         /// </summary>
         public LayoutStyle Layout;
 
+        /// <summary>
+        /// 划分元素的交互样式.
+        /// </summary>
         public InteractStyle Interact;
 
         /// <summary>
@@ -25,6 +28,9 @@ namespace MxUI
         /// </summary>
         public DesignStyle Design;
 
+        /// <summary>
+        /// 划分元素的事件.
+        /// </summary>
         public DivisionEvents Events;
 
         /// <summary>
@@ -36,6 +42,11 @@ namespace MxUI
         /// 该划分元素的子元素列表.
         /// </summary>
         public List<Division> Children = new List<Division>( );
+
+        /// <summary>
+        /// 指定划分元素的控制器.
+        /// </summary>
+        public DivisionController Controller;
 
         /// <summary>
         /// 指定划分元素的渲染器.
@@ -57,19 +68,35 @@ namespace MxUI
         {
             Events = new DivisionEvents( );
             Design.Color = Color.White;
+            Interact.IsInteractive = true;
         }
 
-        public void DoUpdate( )
+        public void DoInitialize( )
         {
+            OnInit( );
+            Renderer?.RendererInit( );
             if( Parent != null )
                 Layout.Calculate( Parent.Layout );
-            if( ContainsPoint( Game1.MouseState.Position ) )
+            for( int count = 0; count < Children.Count; count++ )
+                Children[count].DoInitialize( );
+        }
+        public virtual void OnInit( ) { }
+        public void DoUpdate( )
+        {
+            if( ContainsPoint( Main.MouseState.Position ) )
                 Interact.Interaction = true;
             else
                 Interact.Interaction = false;
-            for( int count = 0; count < Children.Count; count++ )
+            Controller?.Layout( ref Layout );
+            if( Parent != null )
+                Layout.Calculate( Parent.Layout );
+            Controller?.Interact( ref Interact );
+            Controller?.Design( ref Design );
+            OnUpdate( );
+            for( int count = Children.Count - 1; count >= 0; count-- )
                 Children[count].DoUpdate( );
         }
+        public virtual void OnUpdate( ) { }
         public void DoRender( SpriteBatch batch )
         {
             Renderer?.Render( batch );

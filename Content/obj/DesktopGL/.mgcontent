@@ -4,9 +4,11 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>E:/Codes/Courses/Course_19/Content/Pixel.png</File>
+    <File>E:/Codes/Courses/MxUI/Content/Button.png</File>
+    <File>E:/Codes/Courses/MxUI/Content/Pixel.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

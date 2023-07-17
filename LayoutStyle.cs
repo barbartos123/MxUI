@@ -30,6 +30,12 @@ namespace MxUI
         /// </summary>
         public int TotalTop;
 
+        public Point Location => new Point( Left , Top );
+        public Vector2 LocationF => new Vector2( Left, Top );
+
+        public Point TotalLocation => new Point( TotalLeft, TotalTop );
+        public Vector2 TotalLocationF => new Vector2( TotalLeft, TotalTop );
+
         /// <summary>
         /// 划分元素本身的宽度.
         /// </summary>

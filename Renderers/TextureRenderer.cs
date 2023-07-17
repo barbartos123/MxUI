@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace MxUI.Renderers
 {
-    public class PixelRenderer : DivisionRenderer
+    public class TextureRenderer : DivisionRenderer
     {
+        public Texture2D Texture;
         public override void RendererInit( ) { }
         public override void Render( SpriteBatch batch )
         {
-            batch.Draw( Main.Pixel, Division.Layout.TotalHitBox, null, Division.Design.Color, 0f, Vector2.Zero, SpriteEffects.None, 1f );
+            if( Texture != null )
+                batch.Draw( Texture, Division.Layout.LocationF, null, Division.Design.Color, 0f, Vector2.Zero, 1f, SpriteEffects.None, 1f );
         }
     }
 }
