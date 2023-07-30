@@ -1,4 +1,7 @@
-﻿namespace MxUI
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace MxUI
 {
     public static class Ext
     {

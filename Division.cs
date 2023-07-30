@@ -85,7 +85,7 @@ namespace MxUI
         public void DoUpdate( )
         {
             Interact.InteractionLast = Interact.Interaction;
-            if( ContainsPoint( Main.MouseState.Position ) )
+            if( ContainsPoint( EngineInfo.MouseState.Position ) )
                 Interact.Interaction = true;
             else
                 Interact.Interaction = false;

@@ -1,5 +1,14 @@
 ﻿
 using System;
 
-using var game = new MxUI.Main( );
-game.Run( );
+namespace MxUI
+{
+    public class Program
+    {
+        public static void Main( )
+        {
+            var game = new MxUI.Engine( );
+            game.Run( );
+        }
+    }
+}

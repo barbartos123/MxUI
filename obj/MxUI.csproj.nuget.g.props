@@ -14,6 +14,9 @@
     <SourceRoot Include="E:\Applications\Visual Studio 2022 Shared\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)monogame.content.builder.task\3.8.1.303\build\MonoGame.Content.Builder.Task.props" Condition="Exists('$(NuGetPackageRoot)monogame.content.builder.task\3.8.1.303\build\MonoGame.Content.Builder.Task.props')" />
+    <Import Project="$(NuGetPackageRoot)monogame.content.builder.task\3.8.0.1641\build\MonoGame.Content.Builder.Task.props" Condition="Exists('$(NuGetPackageRoot)monogame.content.builder.task\3.8.0.1641\build\MonoGame.Content.Builder.Task.props')" />
   </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMonoGame_Content_Builder_Task Condition=" '$(PkgMonoGame_Content_Builder_Task)' == '' ">C:\Users\Administrator\.nuget\packages\monogame.content.builder.task\3.8.0.1641</PkgMonoGame_Content_Builder_Task>
+  </PropertyGroup>
 </Project>

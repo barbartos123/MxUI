@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MxUI.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace MxUI.Renderers
         public override void RendererInit( ) { }
         public override void Render( SpriteBatch batch )
         {
-            batch.Draw( Main.Pixel, Division.Layout.TotalHitBox, null , Division.Design.Color, 0f, Division.Design.Anchor, SpriteEffects.None, 1f );
+            batch.Draw( TextureResource.Get( "Pixel" ), Division.Layout.TotalHitBox, null , Division.Design.Color, 0f, Division.Design.Anchor, SpriteEffects.None, 1f );
         }
     }
 }

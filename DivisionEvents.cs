@@ -29,8 +29,8 @@ namespace MxUI
 
         public void Execute( )
         {
-            _state = Main.MouseState;
-            _stateLast = Main.MouseStateLast;
+            _state = EngineInfo.MouseState;
+            _stateLast = EngineInfo.MouseStateLast;
 
             if( _state.LeftButton == ButtonState.Pressed && _stateLast.LeftButton == ButtonState.Released )
                 OnMouseLeftClickBefore?.Invoke( );

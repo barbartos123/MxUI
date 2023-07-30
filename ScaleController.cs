@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace MxUI
 {
@@ -19,7 +21,7 @@ namespace MxUI
 
         public override void Design( ref DesignStyle design )
         {
-            float delta = (float)Main.GameTime.ElapsedGameTime.TotalSeconds;
+            float delta = (float)EngineInfo.GameTime.ElapsedGameTime.TotalSeconds;
             if( Open )
             {
                 Close = false;
