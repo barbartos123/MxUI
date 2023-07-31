@@ -64,10 +64,15 @@ namespace MxUI
             return (T)Renderer;
         }
 
+        public RenderTarget2D Canvas;
+
+        public virtual bool IsCanvas => false;
+
         public Division( )
         {
             Events = new DivisionEvents( );
             Events.Division = this;
+            Design.Scale = Vector2.One;
             Design.Color = Color.White;
             Interact.IsInteractive = true;
         }
@@ -75,6 +80,10 @@ namespace MxUI
         public void DoInitialize( )
         {
             OnInit( );
+            if( IsCanvas )
+            {
+                Canvas = new RenderTarget2D( EngineInfo.Graphics.GraphicsDevice, Layout.Width, Layout.Height, false, SurfaceFormat.Color, DepthFormat.None, 0, RenderTargetUsage.PreserveContents );
+            }
             Renderer?.RendererInit( );
             if( Parent != null )
                 Layout.Calculate( Parent.Layout );
@@ -102,9 +111,26 @@ namespace MxUI
         public virtual void OnUpdate( ) { }
         public void DoRender( SpriteBatch batch )
         {
+            if( IsCanvas )
+            {
+                batch.End( );
+                EngineInfo.Graphics.GraphicsDevice.SetRenderTarget( Canvas );
+                EngineInfo.Graphics.GraphicsDevice.Clear( Color.Transparent );
+                batch.Begin( transformMatrix: Layout.CanvasMatrix );
+            }
             Renderer?.Render( batch );
             for( int count = 0; count < Children.Count; count++ )
                 Children[count].DoRender( batch );
+            if( IsCanvas )
+            {
+                batch.End( );
+                if( Parent.IsCanvas )
+                    EngineInfo.Graphics.GraphicsDevice.SetRenderTarget( Parent.Canvas );
+                else
+                    EngineInfo.Graphics.GraphicsDevice.SetRenderTarget( EngineInfo.Engine.EngineRt );
+                batch.Begin( SpriteSortMode.Deferred, BlendState.Additive, SamplerState.PointClamp );
+                batch.Draw( Canvas, Layout.LocationF + Design.Anchor, null, Design.Color, 0f, Design.Anchor, Design.Scale, SpriteEffects.None, 0f );
+            }
         }
         public bool Register( Division div )
         {

@@ -14,7 +14,14 @@ namespace MxUI.Renderers
         public override void RendererInit( ) { }
         public override void Render( SpriteBatch batch )
         {
-            batch.Draw( TextureResource.Get( "Pixel" ), Division.Layout.TotalHitBox, null , Division.Design.Color, 0f, Division.Design.Anchor, SpriteEffects.None, 1f );
+            batch.Draw( TextureResource.Get( "Pixel" ),
+                Division.Layout.TotalLocationF + Division.Design.Anchor,
+                Division.Layout.TotalHitBox,
+                Division.Design.Color,
+                0f,
+                Division.Design.Anchor,
+                Division.Design.Scale,
+                SpriteEffects.None, 1f );
         }
     }
 }
