@@ -41,6 +41,8 @@ namespace MxUI
                 EngineRt = new RenderTarget2D( EngineInfo.Graphics.GraphicsDevice, EngineInfo.ViewWidth, EngineInfo.ViewHeight, false, SurfaceFormat.Color, DepthFormat.None, 0, RenderTargetUsage.PreserveContents );
             };
             DoInitialize( );
+            if( Container == null )
+                Container = new Container( );
             Container.DoInitialize( );
         }
         public virtual void DoInitialize( ) { }
